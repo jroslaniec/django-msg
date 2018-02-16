@@ -1,0 +1,19 @@
+- repo: git://github.com/pre-commit/pre-commit-hooks
+  sha: 'v1.2.0'
+  hooks:
+    - id: check-added-large-files
+    - id: check-docstring-first
+    - id: check-merge-conflict
+    - id: check-yaml
+    - id: check-json
+    - id: debug-statements
+    - id: end-of-file-fixer
+    - id: flake8
+      exclude: '(.*/migrations/.*.py|settings.py)'
+    - id: requirements-txt-fixer
+    - id: trailing-whitespace
+- repo: git://github.com/asottile/reorder_python_imports
+  sha: v0.3.5
+  hooks:
+    - id: reorder-python-imports
+      language_version: 'python3.6'

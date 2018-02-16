@@ -1,0 +1,9 @@
+Account Created
+===============
+
+Hello {{username}},
+
+To login visit {{login_url}}
+
+Cheers,
+Your MyApp Team
