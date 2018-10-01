@@ -27,7 +27,7 @@ Optional requirements:
 # Installation
 
 ```bash
-pip install git+https://github.com/jroslaniec/django-msg@0.1.0#egg=django-msg
+pip install git+https://github.com/jroslaniec/django-msg@0.1.2#egg=django-msg
 ```
 
 To use asynchronous notification sending, AWS SES or Twilio you must
@@ -36,10 +36,10 @@ For asynchronous task install celery, for AWS SES you need boto3 and for SMSes
 you need twilio. You can install them independently or with one of the following commands:
 
 ```bash
-pip install git+https://github.com/jroslaniec/django-msg@0.1.0#egg=django-msg[celery]
-pip install git+https://github.com/jroslaniec/django-msg@0.1.0#egg=django-msg[boto3]
-pip install git+https://github.com/jroslaniec/django-msg@0.1.0#egg=django-msg[twilio]
-pip install git+https://github.com/jroslaniec/django-msg@0.1.0#egg=django-msg[all]
+pip install git+https://github.com/jroslaniec/django-msg@0.1.2#egg=django-msg[celery]
+pip install git+https://github.com/jroslaniec/django-msg@0.1.2#egg=django-msg[boto3]
+pip install git+https://github.com/jroslaniec/django-msg@0.1.2#egg=django-msg[twilio]
+pip install git+https://github.com/jroslaniec/django-msg@0.1.2#egg=django-msg[all]
 ```
 
 # Usage
