@@ -93,11 +93,11 @@ class Msg(models.Model):
     objects = MsgManager()
 
     @staticmethod
-    def new(*args, dispatch_now, async=msg_settings.async, **kwargs):
+    def new(*args, dispatch_now, defer=msg_settings.defer, **kwargs):
         msg = Msg.objects.create_from_any(*args, **kwargs)
 
         if dispatch_now:
-            msg.dispatch(async=async)
+            msg.dispatch(defer=defer)
 
         return msg
 
@@ -107,9 +107,9 @@ class Msg(models.Model):
         if save:
             self.save()
 
-    def dispatch(self, async=msg_settings.async):
+    def dispatch(self, defer=msg_settings.defer):
         self.set_status(Msg.Status.PENDING, save=True)
-        if async:
+        if defer:
             self._dispatch_delay()
         else:
             self._dispatch()

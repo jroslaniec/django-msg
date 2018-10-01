@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'app.User'
 
 MSG_SETTINGS = {
-    'async': False,
+    'defer': False,
     'handlers': [
         'app.messages_handlers.HelloMessageHandler',
     ]
