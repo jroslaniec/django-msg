@@ -3,7 +3,7 @@ from django.conf import settings
 from .utils import import_from_string
 
 DEFAULT_SETTINGS = {
-    'async': False,
+    'defer': False,
     'handlers': [],
     'default_lang': 'en',
 }

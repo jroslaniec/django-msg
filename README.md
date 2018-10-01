@@ -14,7 +14,7 @@ Celery support is also included.
 
 ##  Requirements:
 
-- Python3.6.0+
+- Python3.6.x, Python3.7.x
 - Django 2.0.0+
 - django-jsonfield 1.0.0+
 
@@ -69,7 +69,7 @@ or
 ```python
 msg = Msg.new(*args, **kwargs)
 # some code here
-msg.dispatch() # or msg.dispatch(async=True/False)
+msg.dispatch() # or msg.dispatch(defer=True/False)
 ```
 
 Handler example:
@@ -148,12 +148,12 @@ The task in charge of sending messages is declared as celery's `shared_task`.
 Make sure that you have celery appropriately configured for your Django project
 and you should be ready to go.
 
-If you want to send messages with celery by default you can set `async` setting
-to true.
+If you want to send messages with celery by default you can set `defer` setting
+to `True`.
 
 ```python
 MSG_SETTINGS = {
-    'async': True,
+    'defer': True,
     ...
 }
 ```
@@ -161,14 +161,14 @@ MSG_SETTINGS = {
 Also, you can send message asynchornously with:
 
 ```python
-Msg.new(*args, dispatch_now=True async=True, **kwrags)
+Msg.new(*args, dispatch_now=True, defer=True, **kwrags)
 ```
 
 or
 
 ```python
 msg = Msg.new(*args, dispatch_now=False, **kwargs)
-msg.send(async=True)
+msg.send(defer=True)
 ```
 
 ## Default handlers base classes
@@ -260,11 +260,11 @@ This way will ensure that instantiable (non-abstract) class that inherits from
 Main django-msg settings are defined in `MSG_SETTINGS` and it has following keys
 (defaults are as follow):
 
-- `async=False`
+- `defer=False`
 - `handlers=[]`
 - `default_lang='en'`
 
-If `async` is set to `True` then celery will handle sending a notification.
+If `defer` is set to `True` then celery will handle sending a notification.
 `handlers` is a list of string to handler classes (see example below).
 
 Support for emails, SES emails and Twilio requires additional settings.
@@ -336,7 +336,7 @@ TWILIO_ACCOUNT_SID = '1234567890'
 TWILIO_AUTH_TOKEN= '1234567890'
 
 MSG_SETTINGS = {
-    'async': True,  # Celery will dispatch messages.
+    'defer': True,  # Celery will dispatch messages.
     'handlers': [
         'app.messages_handlers.AccountCreatedHandler',
         'app.messages_handlers.TransactionStartedHandler',
@@ -392,3 +392,10 @@ Anyway, if you want to run them, you can do that with:
 ```bash
 python tests/runtests.py
 ```
+
+# Changelog
+
+## 0.1.2
+
+Add support for Python3.7.x - rename `MSG_SETTINGS` `async` option to `defer` to fix compatibility issue
+(`async` keyword is reserved since Python3.7).
