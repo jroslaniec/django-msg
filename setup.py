@@ -2,7 +2,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 NAME = 'django-msg'
-VERSION = '0.1.0'
+VERSION = '0.1.2'
 SUMMARY = 'Django util package for send email and sms messages'
 
 setup(
@@ -26,6 +26,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: Implementation :: CPython',
     ],
     keywords=('django', 'messages', 'email', 'sms', 'notifications'),
