@@ -13,7 +13,7 @@ setup(
     author='Jędrzej Rosłaniec',
     author_email='jedr.ros@gmail.com',
     license='MIT',
-    install_requires=['django >= 2.0.0', 'psycopg2'],
+    install_requires=[],
     extras_require={
         'celery': ['celery >= 4.0.0'],
         'boto3': ['boto3 >= 1.0.0'],
