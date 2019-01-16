@@ -78,7 +78,7 @@ class Msg(models.Model):
     )
     context = JSONField(
         verbose_name=_('Context'),
-        default={},
+        default=dict,
         blank=True,
     )
     created = models.DateTimeField(

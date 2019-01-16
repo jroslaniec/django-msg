@@ -398,6 +398,14 @@ python tests/runtests.py
 
 # Changelog
 
+## 0.2.2
+
+Set proper Msg.context default
+
+## 0.2.1
+
+Drop previous migrations
+
 ## 0.2.0
 
 Replace django-jsonfield with Django's built-in JSONfield for Postgres.
