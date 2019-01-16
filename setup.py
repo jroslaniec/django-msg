@@ -2,7 +2,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 NAME = 'django-msg'
-VERSION = '0.1.2'
+VERSION = '0.2.0'
 SUMMARY = 'Django util package for send email and sms messages'
 
 setup(
@@ -13,7 +13,7 @@ setup(
     author='Jędrzej Rosłaniec',
     author_email='jedr.ros@gmail.com',
     license='MIT',
-    install_requires=['django >= 2.0.0', 'django-jsonfield >= 1.0.0'],
+    install_requires=['django >= 2.0.0', 'psycopg2'],
     extras_require={
         'celery': ['celery >= 4.0.0'],
         'boto3': ['boto3 >= 1.0.0'],

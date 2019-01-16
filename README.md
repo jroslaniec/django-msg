@@ -16,7 +16,8 @@ Celery support is also included.
 
 - Python3.6.x, Python3.7.x
 - Django 2.0.0+
-- django-jsonfield 1.0.0+
+- psycopg2
+- Works only with Postgres
 
 Optional requirements:
 
@@ -393,7 +394,13 @@ Anyway, if you want to run them, you can do that with:
 python tests/runtests.py
 ```
 
+\* (todo) Tests no longer pass due to no support for other DBs than postgres.
+
 # Changelog
+
+## 0.2.0
+
+Replace django-jsonfield with Django's built-in JSONfield for Postgres.
 
 ## 0.1.2
 

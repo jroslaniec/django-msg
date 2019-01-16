@@ -1,10 +1,10 @@
 from enum import Enum
 from typing import Union
 
+from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
-from jsonfield import JSONField
 
 from .exceptions import MissingHandlerException
 from .handlers import Handler
